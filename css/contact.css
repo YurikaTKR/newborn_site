@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+body {
+  position: relative;
+  display: flex;
+  background-image: url(../images/part/part010.JPG);
+  background-position: center;
+  background-size: cover;
+  color: rgb(5, 5, 5);
+  width: 100%;
+  height: 700px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+}
+
+/* 透過背景 */
+form {
+  width: 450px;
+  height: 680px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  /* opacity: 0.3; */
+}
+
+#userName {
+  background-color: #fff;
+  opacity: 1;
+}
+
+p {
+  color: rgb(83, 75, 75);
+}
+
+label {
+  color: rgb(83, 75, 75);
+}
+
+/* 中央揃え */
+#form {
+  text-align: center;
+  justify-content: center;
+  top: 25px;
+}
+
+p::before {
+  content: "◇";
+  color: rgb(83, 75, 75);
+}
+
+/* 名前のフレームなくす */
+input {
+  border: none;
+}
+
+/* メールフレームサイズ変更 */
+input[type="email"] {
+  border: none;
+  width: 300px;
+  height: 15px;
+}
+
+/* 選択フレームの枠線なくす */
+select {
+  border: none;
+  background-color: #fff;
+  color: rgb(83, 75, 75);
+}
+
+/* 問い合わせボックスサイズ変更 */
+textarea {
+  border: none;
+  resize: none;
+  width: 300px;
+  height: 80px;
+}
+
+/* チェックボックス枠線なし四角 */
+input[type="checkbox"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* チェックボックスのレ点 */
+input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  display: inline-block;
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid rgb(37, 31, 23);
+  border-bottom: 2px solid rgb(37, 31, 23);
+  transform: rotate(-54deg);
+}
+
+/* 選択肢の文字色変更 */
+select[name="inquiryType"] {
+  color: rgb(37, 31, 23);
+}
+
+/* 送信ボタン装飾 */
+input[type="submit"] {
+  background: rgb(37, 31, 23);
+  border: none;
+  width: 100px;
+  padding: 10px;
+  margin: 20px 0;
+  color: #fff;
+  list-style-type: none;
+  content: none;
+}
+
+/* HOMEボタン */
+.gotop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  background-color: rgb(102, 83, 47);
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.gotop a:hover {
+  color: white;
+  background-color: rgb(75, 60, 35)
+}

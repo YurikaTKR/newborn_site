@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+/* スライドとボックスの間の隙間を消去 */
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ヘッダーの固定 */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  /* 固定画面を前面に出す */
+  z-index: 999;
+}
+
+/* バーティカルバーメニュー*/
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* バーティカルバーの位置 */
+.cp_offcm01 {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  display: inline-block;
+}
+
+/* menu */
+.cp_offcm01 .cp_menu {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 180px;
+  cursor: pointer;
+  transition: 0.53s transform;
+  background-color: rgb(147, 130, 109);
+  opacity: 0.8;
+}
+
+.cp_offcm01 .cp_menu li {
+  list-style: none;
+}
+
+.cp_offcm01 .cp_menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.cp_offcm01 #cp_toggle01 {
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+/* menu巾 */
+.cp_offcm01 #cp_toggle01:checked~.cp_menu {
+  transform: translateX(-100vw);
+}
+
+/* menu toggle */
+.cp_offcm01 #cp_toggle01~label {
+  display: block;
+  cursor: pointer;
+  transition: 0.5s transform;
+  color: #fff;
+}
+
+/* menu × の位置 */
+.cp_offcm01 #cp_toggle01:checked~label {
+  transform: translateX(-175px);
+}
+
+.cp_offcm01 #cp_toggle01~label::before {
+  font-family: 'FontAwesome';
+  content: '\f0c9';
+  font-size: 1.5em
+}
+
+.cp_offcm01 #cp_toggle01:checked~label::before {
+  content: '\f00d';
+}
+
+h1 {
+  width: 100%;
+  height: 45px;
+  background-color: rgb(175, 152, 123);
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 22px;
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+}
+
+/* バーティカルバーメニューここまで */
+
+/* スタジオ ロゴ */
+.rogo {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 30%;
+  left: 15%;
+}
+
+/* スライド停止時画像 */
+.img-frame {
+  width: 100%;
+  height: 540px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-image: url(../images/baby/baby003.jpg);
+}
+
+/* スライド */
+.img-frame {
+  background-image: url(../images/baby/baby003.jpg);
+  position: relative;
+  width: 100%;
+  height: 35vw;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.img-01 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../images/baby/baby003.jpg');
+  animation: slide-animation-01 20s infinite;
+}
+
+@keyframes slide-animation-01 {
+  0% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+
+  90% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+/* ナビ */
+.container {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(175, 152, 123);
+  font-weight: bold;
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+section {
+  background-color: rgb(187, 228, 203);
+}
+
+section h2 {
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+  background-color: #fff;
+  color: #5a3e16f1;
+  line-height: 100px;
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+}
+
+section p {
+  text-align: center;
+  font-size: 14px;
+  background-color: rgb(187, 228, 203);
+  color: #fff;
+  line-height: 25px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+/* 複数画像切り替え */
+.slider-container {
+  position: relative;
+  width: auto;
+  height: 35vw;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* 画像の配置・サイズ*/
+.slideimg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: cover;
+  animation: slideAnime 15s infinite;
+  width: 50vw;
+  height: 32vw;
+  margin: 0 auto;
+  border-radius: 13px;
+}
+
+.slideimg:nth-of-type(1) {
+  background-image: url('../images/baby/baby007-01.jpg');
+  animation-delay: 0s;
+}
+
+.slideimg:nth-of-type(2) {
+  background-image: url('../images/part/part004-01.jpg');
+  animation-delay: 3s;
+}
+
+.slideimg:nth-of-type(3) {
+  background-image: url('../images/baby/baby043.jpg');
+  animation-delay: 6s;
+}
+
+.slideimg:nth-of-type(4) {
+  background-image: url('../images/family/family001-01.jpg');
+  animation-delay: 9s;
+}
+
+.slideimg:nth-of-type(5) {
+  background-image: url('../images/baby/baby036.jpg');
+  animation-delay: 12s;
+}
+
+@keyframes slideAnime {
+
+  0%,
+  30%,
+  100% {
+    opacity: 0;
+  }
+
+  10%,
+  20% {
+    opacity: 1;
+  }
+}
+
+.category {
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+  background-color: #fff;
+  font-size: 30px;
+  color: #5a3e16f1;
+  text-align: center;
+  height: 80px;
+  align-items: center;
+}
+
+/* ボックスナビ */
+h3 {
+  padding-top: 6px;
+}
+
+.baby {
+  background-image: url(../images/background/kirakira04.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 27px;
+  font-weight: bold;
+  gap: 5px;
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+}
+
+.baby a {
+  width: 300px;
+  height: 300px;
+  gap: 10px;
+  /* マウスホバーの時薄くなる */
+  background: white;
+  flex-direction: row;
+}
+
+
+.baby a:nth-of-type(1) {
+  background-image: url(../images/part/part001-square.jpg);
+}
+
+.baby a:nth-of-type(2) {
+  background-image: url(../images/part/part002-square.jpg);
+}
+
+.baby a:last-of-type {
+  background-image: url(../images/part/part008-square.jpg);
+}
+
+/* マウスホバーの時薄くなる */
+.baby a:hover {
+  opacity: 0.7;
+  color: white;
+}
+
+footer {
+  position: relative;
+  color: #fff;
+  background-color: rgb(175, 152, 123);
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+}
+
+address p {
+  margin: 0;
+  padding-top: 0px;
+  font-size: 14px;
+}
+
+.studioname-sd {
+  font-size: 26px;
+  margin: 0;
+}
+
+.right {
+  background-color: rgb(175, 152, 123);
+  font-family: "ヒラギノ明朝 ProN", "Yu Mincho", serif;
+  text-align: right;
+  position: absolute;
+  margin: 0;
+  right: 10px;
+  width: 100%;
+}
+
+/* レスポンシブル対応 */
+@media screen and (max-width: 768px) {
+  .img-frame {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  #home {
+    display: absolute;
+  }
+
+  .rogo {
+    display: flex;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    width: 200px;
+    height: auto;
+  }
+
+  section h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    padding-top: 18px;
+  }
+
+  .baby a {
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofllow">
+  <meta name="descriotion" content="HTMLとCSSの課題作品です。">
+  <title>New bone Photo form</title>
+  <link href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="../newbone_site/css/contact.css">
+</head>
+
+<body id="form">
+  <form action="program.php" method="post">
+    <div>
+      <label for="userName">
+        <p>お名前</p>
+      </label>
+      <input type="text" name="userName" id="userName">
+
+      <label for="userEmail">
+        <p>メールアドレス</p>
+      </label>
+      <input type="email" name="userEmail" id="userEmail">
+
+      <p>当サービスを知ったきっかけ</p>
+      <label>
+        <input type="checkbox" name="service" value="Twitter">Twitter
+      </label>
+      <label>
+        <input type="checkbox" name="service" value="Instagram">Instagram
+      </label>
+      <label>
+        <input type="checkbox" name="service" value="口コミ">口コミ
+      </label>
+      <label>
+        <input type="checkbox" name="servis" value="検索">検索
+      </label>
+
+      <label for="inquiryTipe">
+        <p>お問い合わせ種別</p>
+      </label>
+      <select name="inquiryType" id="inquiryType">
+        <option value="選択してください">選択してください</option>
+        <option value="プランについて">プランについて</option>
+        <option value="日程について">日程について</option>
+        <option value="その他お問い合わせ">その他お問い合わせ</option>
+      </select>
+
+
+      <label for="message">
+        <p>お問い合わせ内容</p>
+      </label>
+      <textarea name="massage" id="massege"></textarea>
+
+      <div>
+        <input type="submit" value="送信する">
+      </div>
+    </div>
+  </form>
+
+  <div class="gotop">
+    <a href="index.html#home">Home</a>
+  </div>
+
+</body>
+
+</html>
